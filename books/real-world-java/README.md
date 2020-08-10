@@ -21,7 +21,7 @@
             - 결과 처리
             - 결과 요약 리포트.
 - 세번째 코드
-    - [BankTransactionAnalyzerSimple.class](https://github.com/gracelove91/playground/blob/671b5e447aa9175ff1c788113165f8d5ba2ed07e/books/real-world-java/src/main/java/BankTransactionAnalyzerSimple.java)
+    - [BankTransactionAnalyzerSimple.class](https://github.com/gracelove91/playground/blob/eeaea434af/books/real-world-java/src/main/java/BankTransactionAnalyzerSimple.java)
     - SRP
         - 한 클래스는 한 기능만 책임진다.
         - 클래스가 바뀌어야 하는 이유는 오직 하나여야한다.
