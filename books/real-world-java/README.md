@@ -12,7 +12,7 @@
 - 첫번째 코드
     - [BankTransactionAnalyzerSimple.class](https://github.com/gracelove91/playground/blob/671b5e447aa9175ff1c788113165f8d5ba2ed07e/books/real-world-java/src/main/java/BankTransactionAnalyzerSimple.java)
 - 두번째 코드
-    - [BankTransactionAnalyzerSimple.class](https://github.com/gracelove91/playground/blob/671b5e447aa9175ff1c788113165f8d5ba2ed07e/books/real-world-java/src/main/java/BankTransactionAnalyzerSimple.java)
+    - [BankTransactionAnalyzerSimple.class](https://github.com/gracelove91/playground/blob/45adaab506/books/real-world-java/src/main/java/legacy/BankTransactionAnalyzerSimple.java)
     - 문제점
         - 사용자의 요구사항에 따라 1월달 입출금 내역만 계산한다. 하지만 2월달 3월달... 추가가 된다면? 
         - SRP(단일 책임 원칙) 관점으로 바라보자. 너무 많은 책임을 진다.
