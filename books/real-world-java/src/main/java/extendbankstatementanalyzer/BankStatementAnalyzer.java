@@ -33,5 +33,7 @@ class BankStatementAnalyzer {
 		System.out.println("The total for transaction in February is " + bankStatementProcessor.calculateTotalInMonth(Month.FEBRUARY));
 
 		System.out.println("The total salary received is " + bankStatementProcessor.calculateTotalForCategory("Salary"));
+
+		System.out.println("2월 달 입출금 내역 중 Amount가 1000 이상인 내역 " + bankStatementProcessor.findTransactions(bankTransaction -> bankTransaction.getAmount() >= 1_000 && bankTransaction.getDate().getMonth() == Month.FEBRUARY));
 	}
 }
