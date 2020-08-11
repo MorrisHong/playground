@@ -27,7 +27,7 @@
         - 클래스가 바뀌어야 하는 이유는 오직 하나여야한다.
         - 파싱 기능을 책임지는 클래스(`BankStatementCSVParser`)와 도메인 클래스(`BankTransaction`)를 만들자.
     - 응집도
-        - `BankTransactionAnalyzerSimple` 클래스를 살펴보자
+        - 두번째 코드에 있는 `BankTransactionAnalyzerSimple` 클래스를 살펴보자
         - 계산 작업하는 로직은 `BankTransactionAnalyzerSimple` 내의 정적 메서드로 선언되어있다.
         - 파싱이나 결과 전송 같은 책임과는 직접적인 연관이 없다. 응집도가 떨어진다.
         - 계산 작업 로직을 `BankStatementProcessor` 로 추출하자.
