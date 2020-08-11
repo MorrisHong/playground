@@ -18,8 +18,6 @@ public class BankTransactionAnalyzerSimple {
 	private static final BankStatementCSVParser bankStatementParser = new BankStatementCSVParser();
 
 	public static void main(String[] args) throws IOException {
-		final BankStatementCSVParser bankStatementParser = new BankStatementCSVParser();
-
 		final Path path = Paths.get(RESOURCES + args[0]);
 		final List<String> lines = Files.readAllLines(path);
 
