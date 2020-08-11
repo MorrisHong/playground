@@ -1,4 +1,8 @@
+package extendbankstatementanalyzer;
+
+
 import java.time.Month;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -6,7 +10,7 @@ import java.util.List;
  * @since : 2020/08/10
  */
 
-public class BankStatementProcessor {
+class BankStatementProcessor {
 	private final List<BankTransaction> bankTransactions;
 
 	public BankStatementProcessor(List<BankTransaction> bankTransactions) {
@@ -39,5 +43,15 @@ public class BankStatementProcessor {
 			}
 		}
 		return total;
+	}
+
+	public List<BankTransaction> findTransactions(final BankTransactionFilter bankTransactionFilter) {
+		final List<BankTransaction> result = new ArrayList<>();
+		for (BankTransaction bankTransaction : bankTransactions) {
+			if (bankTransactionFilter.test(bankTransaction)) {
+				result.add(bankTransaction);
+			}
+		}
+		return result;
 	}
 }

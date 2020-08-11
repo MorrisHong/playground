@@ -1,3 +1,5 @@
+package simplebankstatementanalyzer;
+
 import java.time.LocalDate;
 
 /**
@@ -5,7 +7,7 @@ import java.time.LocalDate;
  * @since : 2020/08/10
  */
 
-public class BankTransaction {
+class BankTransaction {
 
 	private final LocalDate date;
 	private final double amount;
@@ -31,7 +33,7 @@ public class BankTransaction {
 
 	@Override
 	public String toString() {
-		return "BankTransaction{" +
+		return "simplebankstatementanalyzer.BankTransaction{" +
 				"date=" + date +
 				", amount=" + amount +
 				", description='" + description + '\'' +
