@@ -39,9 +39,25 @@
         - 세 번째 코드를 보자. `BankTransactionAnalyzerSimple` 클래스는 `BankStatementCSVParser` 클래스에 의존한다. 
         만약 파일 포맷이 CSV가 아닌 JSON이라면? XML 이라면? 리팩토링 작업이 성가시다. 
         - 본 코드는 인터페이스로 결합도를 낮췄다. 
+        
+        
 ## 입출금 내역 분석기 확장판
 > 앞에서 만든 코드에 **전략 디자인 패턴**, **개방 폐쇄/원칙** 을 이용해 기능을 추가하고, 예외를 이용해 실패를 처리하는 법을 배운다.
-
+- 첫번째 코드
+    - [BankStatementProcessor](https://github.com/gracelove91/playground/blob/b3ee4c7176/books/real-world-java/src/main/java/extendbankstatementanalyzer/BankStatementProcessor.java)
+    - 요구사항
+        - 특정 금액 이상의 은행 거래 내역 찾기. (`public List<BankTransaction> findTransactionsGreaterThanEqual(final int amount){...}`)
+        - 특정 월의 입출금 내역 찾기. (`public List<BankTransaction> findTransactionsInMonth(final Month month) {...}`)
+        - 특정 월이나 금액으로 입출금 내역 검색하기(`public List<BankTransaction> findTransactionsInMonthAndGreater(final Month month, final int amount) {...}`)
+    - 문제점
+       - 위 요구사항을 다 구현했다. 이 코드의 문제점은 무엇일까.
+            - 거래 내역의 여러 속성을 조합할 수록 코드가 점점 복잡해진다.
+            - 반복 로직과 비즈니스 로직이 결합되어 분리가 어렵다.
+            - 코드를 반복한다.
+    - 개선방법
+        - 개방/폐쇄 원칙을 적용한다.
+            - 요구사항에 맞춰 추가한 세 개의 메서드를 하나로 퉁칠 수 있다! 개방폐쇄 원칙을 적용하면 코드를 바꾸지 않고 동작을 확장시킬 수 있다.
+            - 비즈니스 로직을 담당하는 `BankTransactionFilter` 인터페이스를 만들어서 결합도를 낮춰보자.
 ## 문서 관리 시스템
 > 의사가 환자 기록을 더 잘 관리하도록 돕는다. 이 과정에서 **소프트웨어 설계상의 상속**, **리스코프 치환 원칙**, **조합과 상속**의 장단점을 소개한다. 또한 **자동화된 테스트 코드**로 더 안정적인 소프트웨어를 개발하는 방법도 배운다.
 
