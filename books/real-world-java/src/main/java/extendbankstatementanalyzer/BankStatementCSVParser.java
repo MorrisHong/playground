@@ -1,4 +1,4 @@
-package simplebankstatementanalyzer;
+package extendbankstatementanalyzer;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -10,7 +10,7 @@ import java.util.List;
  * @since : 2020/08/10
  */
 
-class BankStatementCSVParser implements BankStatementParser{
+class BankStatementCSVParser implements BankStatementParser {
 
 	private static final DateTimeFormatter DATE_PATTERN = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 

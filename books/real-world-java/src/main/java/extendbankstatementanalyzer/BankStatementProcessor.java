@@ -1,6 +1,8 @@
-package simplebankstatementanalyzer;
+package extendbankstatementanalyzer;
+
 
 import java.time.Month;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -41,5 +43,15 @@ class BankStatementProcessor {
 			}
 		}
 		return total;
+	}
+
+	public List<BankTransaction> findTransactionsGreaterThanEqual(final int amount) {
+		final List<BankTransaction> result = new ArrayList<>();
+		for (BankTransaction bankTransaction : bankTransactions) {
+			if (bankTransaction.getAmount() >= amount) {
+				result.add(bankTransaction);
+			}
+		}
+		return result;
 	}
 }

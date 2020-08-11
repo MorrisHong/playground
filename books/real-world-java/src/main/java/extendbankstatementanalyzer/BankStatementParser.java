@@ -1,4 +1,4 @@
-package simplebankstatementanalyzer;
+package extendbankstatementanalyzer;
 
 import java.util.List;
 
