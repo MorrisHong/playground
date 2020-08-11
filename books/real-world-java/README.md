@@ -10,9 +10,9 @@
     - 새로운 기능을 쉽게 추가하거나 기존 기능을 쉽게 제거할 수 있어야 한다.
     - 캡슐화가 잘 되어 있어야한다. 사용자가 쉽게 코드를 이해하고, 기능을 바꿀 수 있어야 한다.
 - 첫번째 코드
-    - [simplebankstatementanalyzer.BankStatementAnalyzer.class](https://github.com/gracelove91/playground/blob/671b5e447aa9175ff1c788113165f8d5ba2ed07e/books/real-world-java/src/main/java/BankTransactionAnalyzerSimple.java)
+    - [BankTransactionAnalyzerSimple.class](https://github.com/gracelove91/playground/blob/671b5e447aa9175ff1c788113165f8d5ba2ed07e/books/real-world-java/src/main/java/BankTransactionAnalyzerSimple.java)
 - 두번째 코드
-    - [simplebankstatementanalyzer.BankStatementAnalyzer.class](https://github.com/gracelove91/playground/blob/6eaf7c0ed2/books/real-world-java/src/main/java/BankTransactionAnalyzerSimple.java)
+    - [BankTransactionAnalyzerSimple.class](https://github.com/gracelove91/playground/blob/6eaf7c0ed2/books/real-world-java/src/main/java/BankTransactionAnalyzerSimple.java)
     - 문제점
         - 사용자의 요구사항에 따라 1월달 입출금 내역만 계산한다. 하지만 2월달 3월달... 추가가 된다면? 
         - SRP(단일 책임 원칙) 관점으로 바라보자. 너무 많은 책임을 진다.
@@ -21,7 +21,7 @@
             - 결과 처리
             - 결과 요약 리포트.
 - 세번째 코드
-    - [simplebankstatementanalyzer.BankStatementAnalyzer.class](https://github.com/gracelove91/playground/blob/359f5fe3cc/books/real-world-java/src/main/java/BankTransactionAnalyzerSimple.java)
+    - [BankTransactionAnalyzerSimple.class](https://github.com/gracelove91/playground/blob/359f5fe3cc/books/real-world-java/src/main/java/BankTransactionAnalyzerSimple.java)
     - SRP
         - 한 클래스는 한 기능만 책임진다.
         - 클래스가 바뀌어야 하는 이유는 오직 하나여야한다.
@@ -31,6 +31,14 @@
         - 계산 작업하는 로직은 `simplebankstatementanalyzer.BankStatementAnalyzer` 내의 정적 메서드로 선언되어있다.
         - 파싱이나 결과 전송 같은 책임과는 직접적인 연관이 없다. 응집도가 떨어진다.
         - 계산 작업 로직을 `simplebankstatementanalyzer.BankStatementProcessor` 로 추출하자.
+- 네번째 코드
+    - [Commit](https://github.com/gracelove91/playground/tree/df34527cd13ef954542844a7d81c9b4696a8d57d)
+    - 결합도
+        - 코드가 서로 어떻게 의존하는지와 관련이 있다.
+        - 어떤 클래스를 구현하는 데 얼마나 많은 지식(다른 클래스)을 참조했는가로 설명 가능하다.
+        - 세 번째 코드를 보자. `BankTransactionAnalyzerSimple` 클래스는 `BankStatementCSVParser` 클래스에 의존한다. 
+        만약 파일 포맷이 CSV가 아닌 JSON이라면? XML 이라면? 리팩토링 작업이 성가시다. 
+        - 본 코드는 인터페이스로 결합도를 낮췄다. 
 ## 입출금 내역 분석기 확장판
 > 앞에서 만든 코드에 **전략 디자인 패턴**, **개방 폐쇄/원칙** 을 이용해 기능을 추가하고, 예외를 이용해 실패를 처리하는 법을 배운다.
 
