@@ -10,9 +10,9 @@
     - 새로운 기능을 쉽게 추가하거나 기존 기능을 쉽게 제거할 수 있어야 한다.
     - 캡슐화가 잘 되어 있어야한다. 사용자가 쉽게 코드를 이해하고, 기능을 바꿀 수 있어야 한다.
 - 첫번째 코드
-    - [BankTransactionAnalyzerSimple.class](https://github.com/gracelove91/playground/blob/671b5e447aa9175ff1c788113165f8d5ba2ed07e/books/real-world-java/src/main/java/BankTransactionAnalyzerSimple.java)
+    - [simplebankstatementanalyzer.BankStatementAnalyzer.class](https://github.com/gracelove91/playground/blob/671b5e447aa9175ff1c788113165f8d5ba2ed07e/books/real-world-java/src/main/java/BankTransactionAnalyzerSimple.java)
 - 두번째 코드
-    - [BankTransactionAnalyzerSimple.class](https://github.com/gracelove91/playground/blob/6eaf7c0ed2/books/real-world-java/src/main/java/BankTransactionAnalyzerSimple.java)
+    - [simplebankstatementanalyzer.BankStatementAnalyzer.class](https://github.com/gracelove91/playground/blob/6eaf7c0ed2/books/real-world-java/src/main/java/BankTransactionAnalyzerSimple.java)
     - 문제점
         - 사용자의 요구사항에 따라 1월달 입출금 내역만 계산한다. 하지만 2월달 3월달... 추가가 된다면? 
         - SRP(단일 책임 원칙) 관점으로 바라보자. 너무 많은 책임을 진다.
@@ -21,16 +21,16 @@
             - 결과 처리
             - 결과 요약 리포트.
 - 세번째 코드
-    - [BankTransactionAnalyzerSimple.class](https://github.com/gracelove91/playground/blob/359f5fe3cc/books/real-world-java/src/main/java/BankTransactionAnalyzerSimple.java)
+    - [simplebankstatementanalyzer.BankStatementAnalyzer.class](https://github.com/gracelove91/playground/blob/359f5fe3cc/books/real-world-java/src/main/java/BankTransactionAnalyzerSimple.java)
     - SRP
         - 한 클래스는 한 기능만 책임진다.
         - 클래스가 바뀌어야 하는 이유는 오직 하나여야한다.
-        - 파싱 기능을 책임지는 클래스(`BankStatementCSVParser`)와 도메인 클래스(`BankTransaction`)를 만들자.
+        - 파싱 기능을 책임지는 클래스(`simplebankstatementanalyzer.BankStatementCSVParser`)와 도메인 클래스(`simplebankstatementanalyzer.BankTransaction`)를 만들자.
     - 응집도
-        - 두번째 코드에 있는 `BankTransactionAnalyzerSimple` 클래스를 살펴보자
-        - 계산 작업하는 로직은 `BankTransactionAnalyzerSimple` 내의 정적 메서드로 선언되어있다.
+        - 두번째 코드에 있는 `simplebankstatementanalyzer.BankStatementAnalyzer` 클래스를 살펴보자
+        - 계산 작업하는 로직은 `simplebankstatementanalyzer.BankStatementAnalyzer` 내의 정적 메서드로 선언되어있다.
         - 파싱이나 결과 전송 같은 책임과는 직접적인 연관이 없다. 응집도가 떨어진다.
-        - 계산 작업 로직을 `BankStatementProcessor` 로 추출하자.
+        - 계산 작업 로직을 `simplebankstatementanalyzer.BankStatementProcessor` 로 추출하자.
 ## 입출금 내역 분석기 확장판
 > 앞에서 만든 코드에 **전략 디자인 패턴**, **개방 폐쇄/원칙** 을 이용해 기능을 추가하고, 예외를 이용해 실패를 처리하는 법을 배운다.
 

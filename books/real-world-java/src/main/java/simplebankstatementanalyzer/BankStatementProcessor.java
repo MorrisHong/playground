@@ -1,3 +1,5 @@
+package simplebankstatementanalyzer;
+
 import java.time.Month;
 import java.util.List;
 

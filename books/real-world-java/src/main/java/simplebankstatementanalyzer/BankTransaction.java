@@ -1,3 +1,5 @@
+package simplebankstatementanalyzer;
+
 import java.time.LocalDate;
 
 /**
@@ -31,7 +33,7 @@ public class BankTransaction {
 
 	@Override
 	public String toString() {
-		return "BankTransaction{" +
+		return "simplebankstatementanalyzer.BankTransaction{" +
 				"date=" + date +
 				", amount=" + amount +
 				", description='" + description + '\'' +
