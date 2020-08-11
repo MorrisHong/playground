@@ -58,6 +58,14 @@
         - 개방/폐쇄 원칙을 적용한다.
             - 요구사항에 맞춰 추가한 세 개의 메서드를 하나로 퉁칠 수 있다! 개방폐쇄 원칙을 적용하면 코드를 바꾸지 않고 동작을 확장시킬 수 있다.
             - 비즈니스 로직을 담당하는 `BankTransactionFilter` 인터페이스를 만들어서 결합도를 낮춰보자.
+- 두번째 코드
+    - [BankStatementProcessor](https://github.com/gracelove91/playground/blob/81bfeddd0f/books/real-world-java/src/main/java/extendbankstatementanalyzer/BankStatementProcessor.java)
+    - [BankTransactionFilter](https://github.com/gracelove91/playground/blob/81bfeddd0f/books/real-world-java/src/main/java/extendbankstatementanalyzer/BankTransactionFilter.java)
+    - 개방/폐쇄 원칙을 적용했다.
+    `BankStatementProcessor` 를 보면 첫 번째 코드의 요구사항을 반영한 세 개의 메서드가 `findTransactions(final BankTransactionFilter bankTransactionFilter)` 메서드 하나로 리팩터링 된 것을 볼 수 있다.
+    `BankTransactionFilter`를 보면 Functional 인터페이스다. 이것을 구현한 비즈니스 로직을 인수로 넘겨주면 된다.
+    [BankStatementAnalyzer](https://github.com/gracelove91/playground/blob/81bfeddd0f/books/real-world-java/src/main/java/extendbankstatementanalyzer/BankStatementAnalyzer.java) 의 `collectSummary()` 메서드의 마지막을 보자. 람다식으로 구현체를 만들어 인수로 넘겨줬다.
+    
 ## 문서 관리 시스템
 > 의사가 환자 기록을 더 잘 관리하도록 돕는다. 이 과정에서 **소프트웨어 설계상의 상속**, **리스코프 치환 원칙**, **조합과 상속**의 장단점을 소개한다. 또한 **자동화된 테스트 코드**로 더 안정적인 소프트웨어를 개발하는 방법도 배운다.
 
