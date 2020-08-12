@@ -112,6 +112,18 @@
                     - 하지만 사용하기 쉽다. API 가독성이 높아진다.
                 - 그렇다면 어떻게?
                     - 지금 코드처럼 섞어 쓰면된다! 예를 들어 `findTransactionsGreaterThanEqual()`이 흔히 사용하는 연산이라면, 이를 명시적 API로 만드는 것이 합리적인 방법이다.
+                    
+### 네번째 코드
+- [BankStatementProcessor](https://github.com/gracelove91/playground/blob/4700f5f61f/books/real-world-java/src/main/java/extendbankstatementanalyzer/BankStatementProcessor.java)
+- [SummaryStatistics](https://github.com/gracelove91/playground/blob/4700f5f61f/books/real-world-java/src/main/java/extendbankstatementanalyzer/SummaryStatistics.java)
+- 고민
+    - 리턴 타입이 원시타입이다.
+        - `public double summarizeTransactions(final BankTransactionSummarizer bankTransactionSummarizer) {...}`
+    - 원시값으로는 다양한 결과를 리턴할 수 없어 유연성이 떨어진다. 
+    - `double`을 감싸는 새 도메인 클래스인 `SummaryStatistics` 클래스를 만들었다. 보다 다양한 요구사항에 유연히 대처할 수 있다.
+
+
+
 ## 문서 관리 시스템
 > 의사가 환자 기록을 더 잘 관리하도록 돕는다. 이 과정에서 **소프트웨어 설계상의 상속**, **리스코프 치환 원칙**, **조합과 상속**의 장단점을 소개한다. 또한 **자동화된 테스트 코드**로 더 안정적인 소프트웨어를 개발하는 방법도 배운다.
 
