@@ -33,7 +33,7 @@ class BankTransaction {
 
 	@Override
 	public String toString() {
-		return "simplebankstatementanalyzer.BankTransaction{" +
+		return "BankTransaction{" +
 				"date=" + date +
 				", amount=" + amount +
 				", description='" + description + '\'' +

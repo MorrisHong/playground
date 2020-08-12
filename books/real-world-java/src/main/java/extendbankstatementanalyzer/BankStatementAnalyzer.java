@@ -36,5 +36,7 @@ class BankStatementAnalyzer {
 		System.out.println("The total tesco received is " + bankStatementProcessor.calculateTotalForCategory("Tesco"));
 
 		System.out.println("2월 달 입출금 내역 중 Amount가 1000 이상인 내역 " + bankStatementProcessor.findTransactions(bankTransaction -> bankTransaction.getAmount() >= 1_000 && bankTransaction.getDate().getMonth() == Month.FEBRUARY));
+
+		System.out.println("summaryStatics " + bankStatementProcessor.summarizeTransactions());
 	}
 }
