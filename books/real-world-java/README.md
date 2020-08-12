@@ -122,7 +122,11 @@
     - 원시값으로는 다양한 결과를 리턴할 수 없어 유연성이 떨어진다. 
     - `double`을 감싸는 새 도메인 클래스인 `SummaryStatistics` 클래스를 만들었다. 보다 다양한 요구사항에 유연히 대처할 수 있다.
 
-
+### 다섯번째 코드
+- [Exporter](https://github.com/gracelove91/playground/blob/82284cb31b/books/real-world-java/src/main/java/extendbankstatementanalyzer/Exporter.java)
+- [HtmlExporter](https://github.com/gracelove91/playground/blob/82284cb31b71f0a1fe06d2fa45b1d85c606a5e19/books/real-world-java/src/main/java/extendbankstatementanalyzer/HtmlExporter.java)
+- 사용자에게 내보낼 형식을 정하자. 먼저 `Exporter` 인터페이스를 정의해서 결합도를 떨어뜨리자. 지금 현재 구현체는 `HtmlExporter`하나다.
+하지만 Json 형식으로 바꾼다던지, Xml 형식으로 바꾼다던지. 구현체를 만들어 바꿔치기 하면 된다.
 
 ## 문서 관리 시스템
 > 의사가 환자 기록을 더 잘 관리하도록 돕는다. 이 과정에서 **소프트웨어 설계상의 상속**, **리스코프 치환 원칙**, **조합과 상속**의 장단점을 소개한다. 또한 **자동화된 테스트 코드**로 더 안정적인 소프트웨어를 개발하는 방법도 배운다.
