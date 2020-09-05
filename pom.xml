@@ -11,6 +11,7 @@
     <modules>
         <module>books</module>
         <module>spring</module>
+        <module>rx</module>
     </modules>
 
     <build>
